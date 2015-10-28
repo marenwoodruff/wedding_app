@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  flight_number: 1
+  flying_from: MyString
+  flying_to: MyString
+  flying_in: 2015-10-28
+  flying_out: 2015-10-28
+  notes: MyText
+
+two:
+  flight_number: 1
+  flying_from: MyString
+  flying_to: MyString
+  flying_in: 2015-10-28
+  flying_out: 2015-10-28
+  notes: MyText
