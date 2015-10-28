@@ -16,3 +16,28 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  font-size: 16px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2em;
+}
+
+.welcome {
+  font-size: 3.5em;
+}
+
+#weddingKiss {
+  margin: 0 auto;
+}
+
+.btn .btn-default {
+  margin: 0 auto;
+  text-align: center;
+  clear: both;
+}

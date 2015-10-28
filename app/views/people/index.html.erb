@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Wedding Guests</h1>
 
-<table>
+<table class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>Flight number</th>
@@ -34,4 +32,6 @@
 
 <br>
 
-<%= link_to 'New Person', new_person_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Guest', new_person_path %>
+<% end %>
