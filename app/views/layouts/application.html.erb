@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'layouts/navbar' unless current_page?(root_url) %>
+  <%= render 'layouts/navbar' unless current_page?(root_url) || user_signed_in? %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= yield %>
