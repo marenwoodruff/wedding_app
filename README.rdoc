@@ -1,28 +1,14 @@
-== README
+# Wedding App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app used to coordinate schedules and info for Lydia's wedding. Once they have signed in, a user can add events, hotels or other users.
 
-Things you may want to cover:
+## Information
 
-* Ruby version
+All users, events and hotels have been seeded.
 
-* System dependencies
+## Technologies Used
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  * Rails
+  * Postgres
+  * Bootstrap
+  * Devise
