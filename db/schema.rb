@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151029171345) do
+ActiveRecord::Schema.define(version: 20151030192022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,18 +41,12 @@ ActiveRecord::Schema.define(version: 20151029171345) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "person_id"
-  end
-
-  create_table "people", force: :cascade do |t|
-    t.integer  "flight_number"
-    t.string   "flying_from"
-    t.string   "flying_to"
-    t.date     "flying_in"
-    t.date     "flying_out"
-    t.text     "notes"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "image"
+    t.date     "check_in"
+    t.date     "check_out"
+    t.string   "address"
+    t.string   "zip_code"
+    t.string   "state"
+    t.string   "phone_number"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,6 +63,15 @@ ActiveRecord::Schema.define(version: 20151029171345) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
+    t.boolean  "flying"
+    t.string   "flightNumber"
+    t.string   "flyingFrom"
+    t.string   "flyingTo"
+    t.date     "flyingIn"
+    t.date     "flyingOut"
+    t.string   "notes"
+    t.string   "roles"
+    t.string   "phone_number"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

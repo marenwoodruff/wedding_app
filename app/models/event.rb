@@ -1,3 +1,3 @@
 class Event < ActiveRecord::Base
-  belongs_to :people
+  # belongs_to :users
 end
