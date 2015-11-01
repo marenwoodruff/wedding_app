@@ -1,6 +1,4 @@
-<p>
-  <h1><%= @event.name %></h1>
-</p>
+<h1><%= @event.name %></h1>
 
 <p>
   <strong>Date:</strong>
@@ -38,5 +36,7 @@
 </p>
 
 <br />
-<%= link_to 'Edit', edit_event_path(@event) %> |
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+<% end %>
 <%= link_to 'Back', events_path %>

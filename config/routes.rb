@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users, only: [:index, :show]
   resources :hotels
   resources :events
   resources :people
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#welcome'
+  root 'events#welcome'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

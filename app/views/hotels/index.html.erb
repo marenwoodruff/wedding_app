@@ -4,23 +4,24 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>City</th>
+      <th>Address</th>
       <th>Nights</th>
       <th>Sharing with</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @hotels.each do |hotel| %>
       <tr>
-        <td><%= hotel.name %></td>
-        <td><%= hotel.city %></td>
+        <td><%= link_to hotel.name, hotel %></td>
+        <td><%= hotel.address %>, <%= hotel.city %>, <%= hotel.state %><%= hotel.zip_code %></td>
         <td><%= hotel.nights %></td>
         <td><%= hotel.sharing_with %></td>
-        <td><%= link_to 'Show', hotel %></td>
-        <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
-        <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
+          <td><%= link_to 'Delete', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,6 +29,9 @@
 
 <br>
 
+
 <% if user_signed_in? %>
   <%= link_to 'New Hotel', new_hotel_path %>
+<% else %>
+  <p><%= link_to 'Sign in', new_user_session_path %> to add/edit/delete a hotel!</p>
 <% end %>

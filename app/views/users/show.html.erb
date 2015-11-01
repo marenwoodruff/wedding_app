@@ -1,0 +1,75 @@
+<h1><%= @user.name %></h1>
+
+<% if @user.roles? %>
+  <p>
+    <strong>Roles:</strong>
+    <%= raw @user.roles %>
+  </p>
+<% end %>
+
+<% if @user.phone_number? %>
+  <p>
+    <strong>Phone Number:</strong>
+    <%= @user.phone_number %>
+  </p>
+<% end %>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<% if @user.flightNumber? == true %>
+  <p>
+    <strong>Flying?</strong>
+    <%= @user.flying %>
+  </p>
+<% end %>
+
+<% if @user.flightNumber? %>
+  <p>
+    <strong>Flight Numbers:</strong>
+    <%= @user.flightNumber %>
+  </p>
+<% end %>
+
+<% if @user.flyingIn? %>
+  <p>
+    <strong>Arriving In Town:</strong>
+    <%= @user.flyingIn %>
+  </p>
+<% end %>
+
+<% if @user.flyingFrom? %>
+  <p>
+    <strong>Coming From:</strong>
+    <%= @user.flyingFrom %>
+  </p>
+<% end %>
+
+<% if @user.flyingOut? %>
+  <p>
+    <strong>Leaving Town:</strong>
+    <%= @user.flyingOut %>
+  </p>
+<% end %>
+
+<% if @user.flyingTo? %>
+  <p>
+    <strong>Going To:</strong>
+    <%= @user.flyingTo %>
+  </p>
+<% end %>
+
+<% if @user.notes? %>
+  <p>
+    <strong>Notes:</strong>
+    <%= raw @user.notes %>
+  </p>
+<% end %>
+
+<br />
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+<% end %>
+<%= link_to 'Back', users_path %>
