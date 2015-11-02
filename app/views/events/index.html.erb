@@ -9,7 +9,9 @@
       <th>Place</th>
       <th>Address</th>
       <th>Attending</th>
-      <th colspan="3"></th>
+      <% if user_signed_in? %>
+        <th colspan="3"></th>
+      <% end %>
     </tr>
   </thead>
 

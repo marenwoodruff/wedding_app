@@ -7,7 +7,9 @@
       <th>Address</th>
       <th>Nights</th>
       <th>Sharing with</th>
-      <th colspan="2"></th>
+      <% if user_signed_in? %>
+        <th colspan="2"></th>
+      <% end %>
     </tr>
   </thead>
 
