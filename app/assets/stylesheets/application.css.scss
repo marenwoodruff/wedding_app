@@ -89,11 +89,36 @@ nav .container-fluid {
   font-family: 'Open Sans', sans-serif;
 }
 
-
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav > li > a:hover{
   color: #0e324b;
 }
 
+#caret {
+  display: none;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  .navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a {
+    font-size: 2em;
+    padding-bottom: 15px;
+  }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #F5F5F5;
+    font-size: 1.5em;
+    text-align: center;
+  }
+  #hamburger {
+    display: none;
+  }
+  #caret {
+    display: block;  
+    font-size: .8em;
+  }
+}
 
 
 
