@@ -1,13 +1,63 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <h2>Edit <%= current_user.name %>'s Profile</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
 
       <div class="form-group">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :phone_number, "Phone Number" %><br />
+        <%= f.text_field :phone_number, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :image, "Photo" %><br />
+        <%= f.text_field :image, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :flying %><br />
+        <%= f.text_field :flying, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :flightNumber, "Flight Numbers" %><br />
+        <%= f.text_field :flightNumber, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :flyingFrom, "Coming From" %><br />
+        <%= f.text_field :flyingFrom, class: 'form-control' %>
+      </div>   
+
+      <div class="form-group">
+        <%= f.label :flyingTo, "Going To" %><br />
+        <%= f.text_field :flyingTo, class: 'form-control' %>
+      </div>    
+
+      <div class="form-group">
+        <%= f.label :flyingIn, "Arriving in Town" %><br>
+        <%= f.date_select :flyingIn %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :flyingOut, "Leaving Town" %><br>
+        <%= f.date_select :flyingOut %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :notes, "Notes- use <br /> to create a 'return'" %><br>
+        <%= raw f.text_area :notes, class: "form-control" %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -15,29 +65,41 @@
       <% end %>
 
       <div class="form-group">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+      </div>
+
+      <br />
+      <br />
+      <br />
+
+      <h3>Change your Password</h3>
+
+      <br />
+
+      <div class="form-group">
+        <%= f.label :password, "Change Password" %> <i>(leave blank if you don't want to change it)</i><br />
         <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation, "New Password Confirmation" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-        <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
       </div>
 
       <div class="actions">
         <%= f.submit "Update", class: 'btn btn-default' %>
       </div>
     <% end %>
+    <%= link_to "Back", :back %>
+
+    <br />
+    <br />
+    <br />
 
     <h3>Cancel my account</h3>
 
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-warning' %></p>
+    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></p>
 
-    <%= link_to "Back", :back %>
   </div>
 </div>

@@ -26,7 +26,7 @@
         <%= f.text_field :time, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :place %><br>
+        <%= f.label :place, "Location" %><br>
         <%= f.text_field :place, class: "form-control" %>
       </div>
       <div class="form-group">
@@ -42,11 +42,11 @@
         <%= f.text_field :state, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :zip_code %><br>
+        <%= f.label :zip_code, "Zip Code" %><br>
         <%= f.text_field :zip_code, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :phone_number %><br>
+        <%= f.label :phone_number, "Phone Number" %><br>
         <%= f.text_field :phone_number, class: "form-control" %>
       </div>
       <div class="form-group">
@@ -54,7 +54,8 @@
         <%= f.text_field :attending, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :notes %><br>
+        <%= f.label :notes, "Notes- use <br /> to create a 'return'" %><br>
+        <%= f.label :notes, "Website- use: <a href='website url' target='_blank'>Website Name</a>" %><br />
         <%= raw f.text_area :notes, class: "form-control" %>
       </div>
       <div class="actions">

@@ -35,7 +35,7 @@
 
 
 <% if user_signed_in? %>
-  <%= link_to 'New Hotel', new_hotel_path %>
+  <p><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %> to add a new guest</p>
 <% else %>
   <p><%= link_to 'Sign in', new_user_session_path %> to add/edit/delete a user!</p>
 <% end %>
